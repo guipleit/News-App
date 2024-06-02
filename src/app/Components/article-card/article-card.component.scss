@@ -1,0 +1,37 @@
+.article-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000000;
+    min-width: 500px;
+    max-width: 500px;
+    min-height: 500px;
+    max-height: 500px;
+    flex-wrap: wrap;
+}
+
+.article-container:hover {
+    cursor: pointer;
+}
+
+.article-author {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.article-image {
+    width: 70%;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid #000000;
+}
+
+.article-description {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 30px 10px 10px 20px;
+    min-height: 150px;
+    max-height: 150px;
+}

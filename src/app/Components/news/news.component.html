@@ -1,0 +1,18 @@
+<main class="news-container">
+@if (loading) {
+    <h1>Loading...</h1>
+} @else if (apiError) {
+    <h1>{{ errorMessage }}</h1>
+}
+
+@if (articles) 
+{
+    @for (article of articles; track $index) 
+    {
+        @if (article.author && article.urlToImage) 
+        {
+            <app-article-card [article]="article"></app-article-card>
+        }
+    }
+}
+</main>

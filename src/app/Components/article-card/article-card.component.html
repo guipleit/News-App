@@ -1,0 +1,10 @@
+<div class="article-container" (click)="onClick()">
+    <p class="article-author">{{ article.author }}</p>
+    <img 
+    [src]="article.urlToImage" 
+    alt="article.title" 
+    class="article-image"
+    width="150px"
+    />
+    <p class="article-description">{{ article.description }}</p>
+</div>
