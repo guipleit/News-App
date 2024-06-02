@@ -1,18 +1,24 @@
+<form class="search-form" [formGroup]="searchForm" (ngSubmit)="getNews(searchForm.value.search!)">
+    <input type="text" formControlName="search" placeholder="Search for articles" />
+    <button type="submit">Search</button>
+</form>
+
 <main class="news-container">
 @if (loading) {
     <h1>Loading...</h1>
 } @else if (apiError) {
     <h1>{{ errorMessage }}</h1>
 }
-
-@if (articles) 
-{
-    @for (article of articles; track $index) 
+    @for (article of paginatedArticles; track $index) 
     {
         @if (article.author && article.urlToImage) 
         {
             <app-article-card [article]="article"></app-article-card>
         }
     }
-}
 </main>
+
+<nav class="pagination">
+    <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages()">Next</button>
+</nav>
